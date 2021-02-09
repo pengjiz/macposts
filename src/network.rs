@@ -1,18 +1,4 @@
-//! Internal data structure for transportation networks.
-//!
-//! Transportation networks are collections of nodes and links, which is similar
-//! to graphs. However, there are two major special features of networks:
-//!
-//! * Links do not only connect nodes. In transportation networks, links are
-//!   representations of real world road ways and carry vehicles. They are at
-//!   the central place in a network.
-//! * Nodes coordinate links. In transportation networks, nodes are junctions of
-//!   physical links and the major role of nodes is to determine how vehicles
-//!   move from one link to another link. In some sense the nodes in a network
-//!   are links in a standard graph, but with more functionalities.
-//!
-//! To better cope with transportation networks, this module is made based off
-//! the [`petgraph`](https://github.com/petgraph/petgraph) library.
+//! Representation of transportation networks.
 
 use std::cmp::max;
 use std::fmt;
@@ -162,7 +148,7 @@ impl<Ix: fmt::Debug> fmt::Debug for LinkIndex<Ix> {
     }
 }
 
-/// Directions.
+/// Directions on the network.
 #[derive(Copy, Clone, Debug)]
 #[repr(u8)]
 pub enum Direction {
