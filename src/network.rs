@@ -526,5 +526,4 @@ mod tests {
             assert!(l2i.contains(l));
         }
     }
-
 }
